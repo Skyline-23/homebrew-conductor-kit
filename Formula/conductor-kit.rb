@@ -2,7 +2,7 @@ class ConductorKit < Formula
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
   url "https://github.com/Skyline-23/conductor-kit/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "ab4e0dda9d32e80186fb329d8a4e9c2eb1935041eb78ed352fd3eefb80b44e36"
+  sha256 "6b3c815ca994fa6ce2d5802a15c6ee99fe9a9bc8f66eb40b2d61060e59e70e65"
   license "MIT"
 
   depends_on "go" => :build
