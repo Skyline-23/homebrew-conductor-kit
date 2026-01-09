@@ -3,7 +3,7 @@ cask "conductor-kit" do
   name "conductor-kit"
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.1.22"
+  version "0.1.23"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "53285653023711ce2f6944b677637b9d337d8c57fa8deed4fd6084623fa3c148"
+      sha256 "cab27bc222b7d93f3a325fe42953d20f55ad253d22d8e3023715e0f766c40ee9"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "16a0aa68a20cb07079f171f4c9534cc03b8c1c1d132ca6c902d50ed989214eaa"
+      sha256 "4c04bed7243af4b87662f2c90b51073cf34403456087050e99a387252890fcfb"
     end
   end
 
@@ -28,12 +28,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "72ac0e79ac02415235c86cc68214ad22606b74ede27323745f8fdc22c4bd7469"
+      sha256 "ec818f0f1b0037a5b150560cf885f4ae9abfafac18601fc8fcc009b67d4a1b17"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "3d44ce5a66898b083246cd5b556424da8707b3fe9b83e8af0abb63efa2efc10c"
+      sha256 "90fb05ebfc39bb7ff2a03f47625c8cab53864dd527d6a066936882a9378b1477"
     end
   end
 
