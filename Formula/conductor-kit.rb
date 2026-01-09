@@ -5,13 +5,13 @@
 class ConductorKit < Formula
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.1.10"
+  version "0.1.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.10/conductor-kit_0.1.10_darwin_amd64.tar.gz"
-      sha256 "f2165986eae4c3684847f99287fda055fca977ef4d754edad5c9047ddaf47ba6"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.11/conductor-kit_0.1.11_darwin_amd64.tar.gz"
+      sha256 "dde63960871b4d5392515cc4a486df3f432b545e725e6a08f404c4b52d753996"
 
       def install
         bin.install "conductor"
@@ -36,8 +36,8 @@ class ConductorKit < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.10/conductor-kit_0.1.10_darwin_arm64.tar.gz"
-      sha256 "20dd439aec322427d7b2ea646eed9d968843289d7369c90b5efa5995041a9b80"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.11/conductor-kit_0.1.11_darwin_arm64.tar.gz"
+      sha256 "2e3976925af616040dc2f788313822996552722ac9a77f6acba2d50e6bace46a"
 
       def install
         bin.install "conductor"
@@ -65,8 +65,8 @@ class ConductorKit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.10/conductor-kit_0.1.10_linux_amd64.tar.gz"
-      sha256 "750079fe75a79e5fbcdc4945f7417ecd30f39e7f71a968927c5214c264cf7d09"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.11/conductor-kit_0.1.11_linux_amd64.tar.gz"
+      sha256 "1d4d40505290954b7d05a0283cfd4930f44808750869e1329e53bf0608d4c474"
       def install
         bin.install "conductor"
         (bin/"conductor-background-task").write <<~EOS
@@ -90,8 +90,8 @@ class ConductorKit < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.10/conductor-kit_0.1.10_linux_arm64.tar.gz"
-      sha256 "c418fbd4581a7aa85f863ba8f1cc94f0f6e58fba4dfe096b0ed1fe445bb7afad"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.11/conductor-kit_0.1.11_linux_arm64.tar.gz"
+      sha256 "2d270e768aa0cb3032463630c079876ac8be285f66660056209a98bcf94a1313"
       def install
         bin.install "conductor"
         (bin/"conductor-background-task").write <<~EOS
