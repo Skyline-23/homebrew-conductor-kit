@@ -5,13 +5,13 @@
 class ConductorKit < Formula
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.4/conductor-kit_0.1.4_darwin_amd64.tar.gz"
-      sha256 "f913c74fdddf2eec408a77963ff9bbd3aa8cccc75352645c10c5277badd8bdcb"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.5/conductor-kit_0.1.5_darwin_amd64.tar.gz"
+      sha256 "5203db9ddb1e1021c364d2ae90b3e26adff7573eca9993cc7769dd35432183f1"
 
       def install
         bin.install "conductor"
@@ -31,13 +31,13 @@ class ConductorKit < Formula
           #!/bin/sh
           exec "#{bin}/conductor" background-batch "$@"
         EOS
-        chmod 0755, bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"
+        chmod 0755, [bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"]
         pkgshare.install "skills", "commands", "config"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.4/conductor-kit_0.1.4_darwin_arm64.tar.gz"
-      sha256 "ae74f237ed65880981dee5c0bf98c34f5529aa95854ef5c1c9cc7f12a80be06a"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.5/conductor-kit_0.1.5_darwin_arm64.tar.gz"
+      sha256 "58aa9a4021d85d73dd56ed9b2948b23f940c97fa2e257ae8f4c08d098d6cbade"
 
       def install
         bin.install "conductor"
@@ -57,7 +57,7 @@ class ConductorKit < Formula
           #!/bin/sh
           exec "#{bin}/conductor" background-batch "$@"
         EOS
-        chmod 0755, bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"
+        chmod 0755, [bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"]
         pkgshare.install "skills", "commands", "config"
       end
     end
@@ -65,8 +65,8 @@ class ConductorKit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.4/conductor-kit_0.1.4_linux_amd64.tar.gz"
-      sha256 "901e93fce5ea821eeb8641fbf47d9a168159e29fd1024cd5011cc8208fa9a302"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.5/conductor-kit_0.1.5_linux_amd64.tar.gz"
+      sha256 "3e2c1b764544194de9df3c108c10068fa5036ac1cc76e649d7646db01d3193bb"
       def install
         bin.install "conductor"
         (bin/"conductor-background-task").write <<~EOS
@@ -85,13 +85,13 @@ class ConductorKit < Formula
           #!/bin/sh
           exec "#{bin}/conductor" background-batch "$@"
         EOS
-        chmod 0755, bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"
+        chmod 0755, [bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"]
         pkgshare.install "skills", "commands", "config"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.4/conductor-kit_0.1.4_linux_arm64.tar.gz"
-      sha256 "f204d2e273d84874a6bc6899a8902ef8b3ed0f70aee870c1852ef618c7082cda"
+      url "https://github.com/Skyline-23/conductor-kit/releases/download/v0.1.5/conductor-kit_0.1.5_linux_arm64.tar.gz"
+      sha256 "9fd0c8c8e24e9cc73eba2fed472b72f8b9339d780216c16ecb33d54eb014854f"
       def install
         bin.install "conductor"
         (bin/"conductor-background-task").write <<~EOS
@@ -110,7 +110,7 @@ class ConductorKit < Formula
           #!/bin/sh
           exec "#{bin}/conductor" background-batch "$@"
         EOS
-        chmod 0755, bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"
+        chmod 0755, [bin/"conductor-background-task", bin/"conductor-background-output", bin/"conductor-background-cancel", bin/"conductor-background-batch"]
         pkgshare.install "skills", "commands", "config"
       end
     end
