@@ -3,7 +3,7 @@ cask "conductor-kit" do
   name "conductor-kit"
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.1.38"
+  version "0.1.39"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "10c41a64145411b8cbe79ba6572d554d859b45d3c89304b3ef7b541bdf9306ea"
+      sha256 "232e90c34c6a98290d65d4f8ed6ba50e8782be564593ca5120fbd04db68a0e3e"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "3c5ca1fab5f774ea65102518210bd9704b40a20ded42f5a13a74e5ef833fbccb"
+      sha256 "de59931bbbe09e1e8542da9ed14c03ccb527b25c6fa5356b9ab2b71cc26cdc42"
     end
   end
 
@@ -28,12 +28,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "b4d1937ae6df87f311c6f9eba8dfa4266ebea84072545e4001e8a7a93cb5458b"
+      sha256 "345d360d9cd6fd3ea2da29078ba55494c089800f8873b54cfa2fa3e229fb67e8"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "103db5fafc79f5c8e600366f03ae6028299b7e8a8feb7d4039928c85c01e4a0c"
+      sha256 "0f07c0990cf59fd849c8e723bda03c63cbbb227c23a40bc9c69121497d58809f"
     end
   end
 
@@ -41,6 +41,7 @@ cask "conductor-kit" do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}"]
     end
+    system_command "#{staged_path}/conductor", args: ["install", "--mode", "link", "--repo", "#{staged_path}", "--force"]
   end
 
   uninstall_preflight do
@@ -49,16 +50,13 @@ cask "conductor-kit" do
     end
   end
 
-  caveats <<~EOS
-    To complete installation, run:
-      conductor install
-
-    This will prompt you to select which CLIs (codex/claude/opencode)
-    and MCP bridges (mcp-codex/mcp-claude/mcp-gemini) to configure.
-
-    To uninstall:
-      conductor uninstall
-  EOS
+  caveats do
+    "Skills/commands were linked into ~/.codex and ~/.claude during install."
+    "If you need to re-link:"
+    "  #{staged_path}/conductor install --mode link --repo #{staged_path} --force"
+    "To fully remove user-level installs:"
+    "  conductor uninstall --force"
+  end
 
   # No zap stanza required
 end
