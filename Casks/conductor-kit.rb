@@ -41,7 +41,6 @@ cask "conductor-kit" do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}"]
     end
-    system_command "#{staged_path}/conductor", args: ["install", "--mode", "link", "--repo", "#{staged_path}", "--force"]
   end
 
   uninstall_preflight do
@@ -50,13 +49,16 @@ cask "conductor-kit" do
     end
   end
 
-  caveats do
-    "Skills/commands were linked into ~/.codex and ~/.claude during install."
-    "If you need to re-link:"
-    "  #{staged_path}/conductor install --mode link --repo #{staged_path} --force"
-    "To fully remove user-level installs:"
-    "  conductor uninstall --force"
-  end
+  caveats <<~EOS
+    To complete installation, run:
+      conductor install
+
+    This will prompt you to select which CLIs (codex/claude/opencode)
+    and MCP bridges (mcp-codex/mcp-claude/mcp-gemini) to configure.
+
+    To uninstall:
+      conductor uninstall
+  EOS
 
   # No zap stanza required
 end
