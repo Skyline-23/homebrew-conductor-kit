@@ -3,7 +3,7 @@ cask "conductor-kit" do
   name "conductor-kit"
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.1.57"
+  version "0.1.58"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "111875d0738e7b219248ec60a88c05d6c6776a3e8f1619a9ada90d67b45eb0b8"
+      sha256 "f9b9b256fecc8826417c75005845ca6300b0fa8ab5cb782b2112e0b33fcb76f4"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "71f74c869d9a36a8b0fb3500e153aa46b2b7fc8fcfabb1f8c1358c7f2e0d73f6"
+      sha256 "fc386eaaa60f3dacd29207d50bd2eeb6f85e5e406a051fe7ec0fbe5805a54f1a"
     end
   end
 
@@ -28,12 +28,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "076726ee71b20a97eb141845eca6ef1ec653f4e1770f0cf6068b134f71c9c55f"
+      sha256 "74d60ee257910fdb8d296ad769435b5aee8fcd89b22718d9e46d12366a5e8d76"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "fed9171beb55e515d7fd03cc63a912814a305bea6196b2fc58881f5260b52f79"
+      sha256 "25dc2c766000aa861d6a4206dee73eb031f91a6ce6753e27f3b5049345bdfb1c"
     end
   end
 
@@ -41,7 +41,7 @@ cask "conductor-kit" do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}"]
     end
-    system_command "#{staged_path}/conductor", args: ["install", "--mode", "link", "--repo", "#{staged_path}", "--force"]
+    system_command "#{staged_path}/conductor", args: ["install", "--mode", "link", "--repo", "#{staged_path}"]
   end
 
   uninstall_preflight do
