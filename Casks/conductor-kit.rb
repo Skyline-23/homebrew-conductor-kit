@@ -15,12 +15,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "f1c2ee9d801c370834aa70d54ed17e104b7e3b061c72ed34cf6d49b4038a9bbc"
+      sha256 "64eee074a499f2c48efc3b9982448983f4d84375e8afd291312a21f637d2ee74"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "55ddc1cddd5405cbd3c132618a6f8a6871b3e9c0d7e5ba74beef189d166a26ec"
+      sha256 "4a2cd65ac91860dc03e516c206775095a55d145b20703976a3ec41b4a606ff04"
     end
   end
 
@@ -28,12 +28,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "6ccd64dcff55ae3ca22b67e0d6a642a7c34b19c1069e63a4dfead9ddb177c00a"
+      sha256 "1efbae01c85586ed6bc0a3708f739a749f2ddcdad235d03e0fb4677990808640"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "1d0fe49b5a02fdf368521f1a810cc3cb8c41afee7d3c99fb6f6c926b12fd487f"
+      sha256 "044730acff946ed9fed419e4af3c7d42e927d17798f0cc25617250ee1ba3c735"
     end
   end
 
