@@ -3,7 +3,7 @@ cask "conductor-kit" do
   name "conductor-kit"
   desc "Global skills pack and Go helper for Codex CLI and Claude Code"
   homepage "https://github.com/Skyline-23/conductor-kit"
-  version "0.2.2"
+  version "0.2.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "7473869b2513f0609fc9ddb7ff02dc95a9cb2089a2e58bfee35df129384e3761"
+      sha256 "59194c7b5c5caa7b5999c6f93df112ab3aa290ba1935669f901f8996ecc56617"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "74f0f2b49cf55a68bb87da26a0f5d43f232b8dce1c110715e71083631cd76430"
+      sha256 "9419341a71015f5e1cebe3b0cabadbec85b819991a781060e6a93d8768ae22a1"
     end
   end
 
@@ -28,12 +28,12 @@ cask "conductor-kit" do
     on_intel do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_amd64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "583cca1949f97356fe843a5a0a90c1a27459e495ec817005b5b37c6ee385d93b"
+      sha256 "df248d9407d45d0a96270884029bde438bcabd15316f4a2747d62e92d7df8b45"
     end
     on_arm do
       url "https://github.com/Skyline-23/conductor-kit/releases/download/v#{version}/conductor-kit_#{version}_linux_arm64.tar.gz",
         verified: "github.com/Skyline-23/conductor-kit"
-      sha256 "79ce4d5af4aa335ebb762bcc18ee6497d81d6b355f902a1d9332532de9a34cee"
+      sha256 "de77310f35c1b13bddc48822bc878da7d4f2c1af082b60acfbce636be5c38f33"
     end
   end
 
@@ -46,7 +46,7 @@ cask "conductor-kit" do
 
   uninstall_preflight do
     if File.exist?("#{staged_path}/conductor")
-      system_command "#{staged_path}/conductor", args: ["uninstall", "--force"]
+      system_command "#{staged_path}/conductor", args: ["uninstall", "--force", "--no-config"]
     end
   end
 
